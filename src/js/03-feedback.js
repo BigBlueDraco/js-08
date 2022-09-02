@@ -26,6 +26,8 @@ function onSubmit(event){
     event.preventDefault();
     console.log(JSON.parse(localStorage.getItem(KEY_FEEDBACK)));
     localStorage.clear()
+    feedbackEmailInput.value ="";
+    feedbackMessageInput.value =feedbackObj.message;
 }
 
 function onInput(event){
