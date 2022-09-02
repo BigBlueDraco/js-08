@@ -6,13 +6,7 @@ const feedbackEmailInput = document.querySelector('[name="email"]')
 const feedbackMessageInput = document.querySelector('[name="message"]')
 const feedbackObj = {
         email: "",
-        message: "", 
-}
-try{
-    feedbackObj.email= JSON.parse(localStorage.getItem(KEY_FEEDBACK)).email;
-    feedbackObj.message= JSON.parse(localStorage.getItem(KEY_FEEDBACK)).message;
-}
-catch{
+        message: "",        
 }
 
 feedbackEmailInput.value =feedbackObj.email;
@@ -25,9 +19,10 @@ feedbackForm.addEventListener("input",  throttle((event) => onInput(event), 1000
 function onSubmit(event){
     event.preventDefault();
     console.log(JSON.parse(localStorage.getItem(KEY_FEEDBACK)));
-    localStorage.clear()
+    localStorage.removeItem(KEY_FEEDBACK)
+    setFeedbackObjFromLocaleStorege()
     feedbackEmailInput.value ="";
-    feedbackMessageInput.value =feedbackObj.message;
+    feedbackMessageInput.value ="";
 }
 
 function onInput(event){
@@ -41,4 +36,13 @@ function onInput(event){
           break;
       }
     localStorage.setItem(KEY_FEEDBACK,JSON.stringify(feedbackObj))
+}
+function setFeedbackObjFromLocaleStorege(){
+    try{
+        const localeFeedbackObj = JSON.parse(localStorage.getItem(KEY_FEEDBACK))
+        feedbackObj.email= localeFeedbackObj.email;
+        feedbackObj.message= localeFeedbackObj.message;
+    }
+    catch{
+    }   
 }

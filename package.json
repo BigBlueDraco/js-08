@@ -5,7 +5,7 @@
   "homepage": "https://BigBlueDraco.github.io/js-08/src",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-08/"
+    "build": "parcel build src/*.html --public-url /js-08/src"
   },
   "repository": {
     "type": "git",
