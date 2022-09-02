@@ -27,15 +27,8 @@ function onSubmit(event){
 }
 
 function onInput(event){
-    const currentInputName = event.target.name;
-    switch(currentInputName) {
-        case "email":
-            feedbackObj.email = event.target.value;
-          break;
-        case "message":
-            feedbackObj.message = event.target.value;
-          break;
-      }
+    const {name: name, value: value} = event.target;
+    feedbackObj[name] = value;
     localStorage.setItem(KEY_FEEDBACK,JSON.stringify(feedbackObj))
 }
 function setFeedbackObjFromLocaleStorege(){
