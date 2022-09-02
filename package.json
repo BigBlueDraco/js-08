@@ -2,10 +2,10 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://BigBlueDraco.github.io/js-08",
+  "homepage": "https://BigBlueDraco.github.io/js-08e",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /js-08/" 
+    "build": "parcel build src/*.html --public-url /js-08/"
   },
   "repository": {
     "type": "git",
