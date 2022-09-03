@@ -15,7 +15,7 @@ feedbackEmailInput.value =email;
 feedbackMessageInput.value =message;
 
 feedbackForm.addEventListener("submit", onSubmit)
-feedbackForm.addEventListener("input",  throttle((event)=>onInput(event), 1000))
+feedbackForm.addEventListener("input",  throttle(onInput, 1000))
 
 function onSubmit(event){
     event.preventDefault();
@@ -28,7 +28,9 @@ function onSubmit(event){
 
 function onInput(event){
     const {name: name, value: value} = event.target;
+
     feedbackObj[name] = value;
+
     localStorage.setItem(KEY_FEEDBACK,JSON.stringify(feedbackObj))
 }
 function setFeedbackObjFromLocaleStorege(){
