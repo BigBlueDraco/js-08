@@ -15,7 +15,7 @@ feedbackEmailInput.value =email;
 feedbackMessageInput.value =message;
 
 feedbackForm.addEventListener("submit", onSubmit)
-feedbackForm.addEventListener("input",  throttle(onInput, 1000))
+feedbackForm.addEventListener("input",  throttle(onInput, 500))
 
 function onSubmit(event){
     event.preventDefault();
