@@ -21,7 +21,7 @@ function onSubmit(event){
     event.preventDefault();
     console.log(JSON.parse(localStorage.getItem(KEY_FEEDBACK)));
     localStorage.removeItem(KEY_FEEDBACK)
-    setFeedbackObjFromLocaleStorege()
+    // setFeedbackObjFromLocaleStorege()
     const{email, message} = event.target.elements;
     email.value = "";
     message.value ="";
